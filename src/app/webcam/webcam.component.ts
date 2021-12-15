@@ -57,7 +57,7 @@ export class WebcamComponent implements AfterViewInit {
           this.image = obj.base64;
           this.updatePicture.emit(obj.base64);
         },
-        error: (error) => this.errorEvent.emit(error),
+        error: (error) => console.log(error),
         support: (error) => console.log(error),
       },
     };
@@ -67,6 +67,6 @@ export class WebcamComponent implements AfterViewInit {
       .then(() => {
         acessoWebFrame.initCamera(this.camConfig, callback, this.camLayout);
       })
-      .catch((error) => this.errorEvent.emit(error));
+      .catch((error) => console.log(error));
   }
 }

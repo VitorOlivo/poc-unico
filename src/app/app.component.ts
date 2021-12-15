@@ -6,23 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  valor = 'Vai mudar';
+  public valor: string;
 
   constructor() {}
 
   public updatePicture(photo: string): void {
-    setTimeout(() => {
-      console.log('Antes: ', this.valor)
-    this.valor = 'Muda';
-    console.log('Depois: ', this.valor)
-    alert('Mudou?')
-    }, 3000)
-  }
-
-  public muda(): void {
-    console.log('Antes: ', this.valor)
-    this.valor = 'Muda';
-    console.log('Depois: ', this.valor)
-    alert('Mudou?')
+    this.valor = photo;
   }
 }
